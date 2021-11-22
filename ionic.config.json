@@ -1,0 +1,7 @@
+{
+  "name": "HostManager.FrontEnd",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

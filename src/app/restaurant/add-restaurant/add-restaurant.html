@@ -1,0 +1,76 @@
+<ion-header>
+	<ion-toolbar>
+		<ion-buttons slot="start">
+			
+				<ion-buttons slot="start">
+					<button class="arrowButton" (click)="openSideBar()"></button>
+				</ion-buttons>
+			
+		</ion-buttons>
+
+		<ion-buttons slot="end">
+			
+				<button class="backButton" (click)="backButton()"> Regresar </button>
+			
+		</ion-buttons>
+
+		<ion-title>Agregar Restaurante</ion-title>
+	</ion-toolbar>
+</ion-header>
+
+<style>
+    input[type=text], select {
+      width: 100%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+    
+    input[type=submit] {
+      width: 100%;
+      background-color: black;
+      color: white;
+      padding: 14px 20px;
+      margin: 8px 0;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    
+    input[type=submit]:hover {
+      background-color:black;
+    }
+    
+    div {
+      border-radius: 5px;
+      background-color: #f2f2f2;
+      padding: 20px;
+    }
+    </style>
+
+
+<ion-content>
+
+    <div>
+        <form >
+          <label for="Name">Restaurante</label>
+          <input type="text" id="Name" name="NombreTienda" placeholder="Agregar nombre del restaurante" [(ngModel)]="restaurantDto.NombreTienda">
+      
+          <label for="Address">Direccion</label>
+          <input type="text" id="Address" name="DireccionTienda" placeholder="Agregar direccion del restaurante" [(ngModel)]="restaurantDto.DireccionTienda">
+      
+          <label for="CorreoTienda">CorreoTienda</label>
+            <input name="CorreoTienda" placeholder="CorreoTienda" [(ngModel)]="restaurantDto.CorreoTienda" min="0" type="number">
+
+          <label for="TelefonoTienda">TelefonoTienda</label>
+          <input type="text" id="TelefonoTienda" name="TelefonoTienda" placeholder="Agregar telefono del restaurante" [(ngModel)]="restaurantDto.TelefonoTienda">
+        <br/>
+          <button (click)="createRestaurant()">Guardar registro</button>>
+        </form>
+      </div>
+      
+
+</ion-content>

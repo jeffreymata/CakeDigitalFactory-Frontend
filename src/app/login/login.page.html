@@ -1,0 +1,54 @@
+
+
+<ion-content>
+	<div class="pst-wrap-form pdl-40 pdr-30">
+		<div class="wrapper-form pdl-30 pdr-30">
+			<div class="mgt-40 mgb-20">
+				<br>
+				
+				<img class="brand-logo" src="assets/imgs/logo.png">
+				<h3 class="uppercase txt-light fw-600 fs-20 spacing-2 mgl-20 pdt-0">Cake Digital Factory</h3> 
+				<p class="pdl-20 fs-12 txt-light">Cake Factory</p>
+			</div>
+			<div text-right class="mgr--10">
+			
+			</div>
+
+			<br>
+
+			<form [formGroup]="loginForm" (submit)="loginUser()" novalidate>
+				<ion-label stacked class="mgb-5 fs-13 txt-light">Usuario</ion-label>
+				<ion-list class="ani-bottom-to-top mgb-0 mgt-5">
+					<ion-item class="white-opct bdra-30">
+						<ion-input #email formControlName="email" type="email" placeholder="Ingresa tu usuario" [class.invalid]="!loginForm.controls.email.valid && loginForm.controls.email.dirty" class=""></ion-input>
+					</ion-item>
+				</ion-list>
+				
+			
+
+				<br>
+				
+				<ion-label stacked class="mgb-5 fs-13 txt-light">Contraseña</ion-label>
+				<ion-list class="ani-bottom-to-top mgb-0 mgt-5">
+					<ion-item class="white-opct bdra-30">
+						<ion-input #password formControlName="password" type="password" placeholder="Ingresa tu contraseña" 
+						[class.invalid]="!loginForm.controls.password.valid && loginForm.controls.password.dirty" class=""></ion-input>
+					</ion-item>
+				</ion-list>
+
+				<div class="error-message" *ngIf="!loginForm.controls.password.valid && loginForm.controls.password.dirty">
+					<p class="fs-11 mgt-5 mgb-0 txt-light">Tu contraseña debe de contener mas de 6 caracteres.</p>
+				</div>
+
+				
+
+				<ion-button expand="block" shape="round" color="primary" class="mgt-30 uppercase fw-600 spacing1 ani-bottom-to-top shadow-0" type="submit">
+					Ingresar
+				</ion-button>
+
+				<br>
+				<br>
+			</form>
+		</div>
+	</div>
+</ion-content>

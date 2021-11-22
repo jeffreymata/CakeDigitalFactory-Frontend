@@ -1,0 +1,72 @@
+* {
+    font-family: lato;
+}
+
+.menu-header-bg{
+  height: 180px;  
+  width: 350px;
+   background-color: orange; 
+}
+
+.header-content{
+    position: absolute;
+    top: 30px;
+    left: 15px;
+    display: flex;
+    align-items: center;
+
+
+    img {
+        width: 80px;
+        height: 80px;
+        border-radius: 50px;
+        margin-right: 14px;
+    }
+
+
+    h2{
+        font-weight: 200;
+    }
+
+    p{
+        font-size: 12px;
+        color: white;
+        font-weight: 100px;
+        letter-spacing: 0.4px;
+    }
+}
+
+
+.menu{
+    align-items: center;
+    color: white;
+    
+}
+
+
+ion-list{
+	background: transparent;
+    background-color: white;
+	
+}
+
+ion-item{
+    background-color: white;
+}
+
+.active{
+  --ion-text-color: var(--ion-color-primary);
+  ion-icon{
+      --ion-text-color-rgb : var(--ion-color-primary);
+  }
+}
+
+.active-parent{
+    font-weight: 500;
+
+}
+
+.sub-item{
+   padding-left: 20px;
+   font-size: small;
+}

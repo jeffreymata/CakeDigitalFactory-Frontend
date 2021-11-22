@@ -1,0 +1,47 @@
+<ion-menu menuId="admin-menu" contentId="main">
+    <ion-content>
+       <div class="menu-header-bg"></div>
+       <div class="header-content">
+         <img src="../assets/imgs/logo.png">
+         <ion-label>
+           <h2>
+              Usuario 
+           </h2>
+           <p>Usuario activo</p>
+         </ion-label>
+       </div>
+
+
+       <div class="menu" *ngFor="let p of menu">
+        
+          <ion-menu-toggle auto-hide="false" *ngIf="p.path">
+            <ion-item [routerDirection]="'root'" [routerLink]="[p.path]" class="txt1" routerActive="active">
+              <ion-icon slot="start" style="color: black;" [name]="p.icon"></ion-icon>
+              <ion-label>{{p.name}}</ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+
+
+          <ion-item button *ngIf="p.children?.length>0" (click)="p.open = !p.open" 
+            [class.active-parent]="p.open" detail="false">
+             <ion-icon slot="start" name="arrow-forward" *ngIf="!p.open"></ion-icon>
+             <ion-icon slot="start" name="arrow-down" *ngIf="p.open"></ion-icon>
+             <ion-label>{{p.name}}</ion-label>
+          </ion-item>
+
+          <ion-list *ngIf="p.open">
+            <ion-menu-toggle>
+              <ion-item class="sub-item" *ngFor="let sub of p.children" [routerDirection]="'root'" [routerLink]="[sub.path]" class="txt1" routerActive="active">
+                <ion-icon slot="start" style="color: black;" [name]="sub.icon"></ion-icon>
+                <ion-label>{{sub.name}}</ion-label>
+              </ion-item>
+            </ion-menu-toggle>
+          </ion-list>
+        
+       </div>
+       
+   
+
+
+    </ion-content>
+  </ion-menu>

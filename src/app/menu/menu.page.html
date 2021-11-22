@@ -1,0 +1,26 @@
+<ion-menu menuId="main-menu" contentId="main">
+    <ion-content>
+       <div class="menu-header-bg"></div>
+       <div class="header-content">
+         <img src="../assets/imgs/logo.png">
+         <ion-label>
+           <h2>
+              Usuario 
+           </h2>
+           <p>Usuario activo</p>
+         </ion-label>
+       </div>
+
+
+       <div class="menu">
+        <ion-list class="lst-no-background" no-margin no-lines>
+          <ion-menu-toggle auto-hide="false" *ngFor="let p of menu">
+            <ion-item [routerDirection]="'root'" [routerLink]="[p.path]" class="txt1">
+              <ion-icon slot="start" style="color: black;" [name]="p.icon"></ion-icon>
+              <ion-label>{{p.name}}</ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+        </ion-list>
+       </div>
+    </ion-content>
+  </ion-menu>

@@ -1,0 +1,14 @@
+{
+  "appId": "io.ionic.starter",
+  "appName": "HostManager.FrontEnd",
+  "bundledWebRuntime": false,
+  "windowsAndroidStudioPath": "C:Program FilesAndroidAndroid Studio\binstudio64.exe",
+  "npmClient": "npm",
+  "webDir": "www",
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 0
+    }
+  },
+  "cordova": {}
+}

@@ -1,0 +1,78 @@
+<ion-header>
+	<ion-toolbar>
+		<ion-buttons slot="start">
+			
+				<ion-buttons slot="start">
+					<button class="arrowButton" (click)="openSideBar()"></button>
+				</ion-buttons>
+			
+		</ion-buttons>
+
+		<ion-buttons slot="end">
+			
+				
+			
+		</ion-buttons>
+
+		<ion-title>Panaderias</ion-title>
+	</ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+
+	<ion-card>
+		<ion-card-content>
+			            
+					<button class="addButton" (click)="presentModal()">
+            <ion-icon slot="start" color="primary" name="add-circle"> </ion-icon>
+            Agregar Panaderia</button>
+				
+		</ion-card-content>
+	</ion-card>
+
+	<ion-card>
+
+		<ion-card-content>
+	<!-- <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content
+          pullingIcon=""
+          pullingText="Jala para refrescar"
+          refreshingSpinner="circles"
+          refreshingText="Refrescando...">
+  </ion-refresher-content>
+</ion-refresher> -->
+   
+
+
+    <ngx-datatable
+  [rows]="restaurants"
+  [ngClass]="tablestyle"
+  [rowHeight]="'auto'"
+  [headerHeight]="50"
+  [columnMode]="'force'">
+  <ngx-datatable-column name="Id"></ngx-datatable-column>
+  <ngx-datatable-column name="Nombre"></ngx-datatable-column>
+  <ngx-datatable-column name="Direccion"></ngx-datatable-column>
+  <ngx-datatable-column name="Correo"></ngx-datatable-column>
+  <ngx-datatable-column name="Telefono"></ngx-datatable-column>
+
+  <ngx-datatable-column name="Actions" sortable="false">
+    <ng-template let-row="row" let-value="value" ngx-datatable-cell-template>
+    <button class="updateButton" (click)="OpenUpdateView(row.restaurantId)">
+        <ion-icon slot="end" color="primary" name="create"  ></ion-icon>
+    </button>
+<!--
+    <button class="deleteButton" (click)="deleteRestaurant(row.restaurantId)">
+      <ion-icon slot="end" color="danger" name="trash" ></ion-icon>
+    </button>
+    --> 
+    </ng-template>
+  </ngx-datatable-column>
+
+  </ngx-datatable>
+
+</ion-card-content>
+
+</ion-card>
+</ion-content>
